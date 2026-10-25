@@ -9,9 +9,9 @@
 Removing an app usually leaves its settings, caches and data scattered around
 your home folder. App Cleaner finds them and removes them together with the app.
 
-<img src="docs/screenshots/1-app-list.png" width="720" alt="Choosing an app to remove">
-
 </div>
+
+<!-- Demo video: on GitHub, edit this file and drag demo.webm onto this line -->
 
 ## Features
 
@@ -48,10 +48,6 @@ Click **Browse Installed Apps**, search for the app, and click it.
 
 ### 2. Review what it found
 
-<div align="center">
-<img src="docs/screenshots/2-review.png" width="720" alt="Reviewing leftover files">
-</div>
-
 - **Ticked** items match the app's name exactly. These are safe to remove.
 - **Unticked** items only partly match (e.g. `nautilus-python` for Files). Check them before ticking.
 - Anything found in `~/Documents` is always unticked, since it may be your own work.
@@ -61,10 +57,6 @@ Click **Browse Installed Apps**, search for the app, and click it.
 
 Click **Remove**. The app is uninstalled (apt apps ask for your password), and the
 ticked files are moved to the Trash.
-
-<div align="center">
-<img src="docs/screenshots/3-done.png" width="720" alt="App removed">
-</div>
 
 ## Safety
 
