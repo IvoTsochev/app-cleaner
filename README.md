@@ -11,7 +11,8 @@ your home folder. App Cleaner finds them and removes them together with the app.
 
 </div>
 
-<!-- Demo video: on GitHub, edit this file and drag demo.webm onto this line -->
+[demo.webm](https://github.com/user-attachments/assets/f2ec7878-fc85-4930-bf5b-6c4ede8a5a27)
+
 
 ## Features
 
