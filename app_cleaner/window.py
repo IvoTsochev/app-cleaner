@@ -53,6 +53,18 @@ class AppCleanerWindow(Adw.ApplicationWindow):
         self.done_page.set_child(again)
         self.stack.add_named(self.done_page, "done")
 
+        escape = Gtk.ShortcutController()
+        escape.add_shortcut(Gtk.Shortcut(trigger=Gtk.ShortcutTrigger.parse_string("Escape"),
+                                         action=Gtk.CallbackAction.new(self._on_escape)))
+        self.add_controller(escape)
+
+    def _on_escape(self, *_):
+        """Escape goes back to the start page from the results and done pages."""
+        if self.stack.get_visible_child_name() not in ("results", "done"):
+            return False
+        self.show_start()
+        return True
+
     # Pages
 
     def _build_start_page(self):
@@ -261,6 +273,8 @@ class AppCleanerWindow(Adw.ApplicationWindow):
             self.load(Path(row.filename))
 
         listbox.connect("row-activated", on_activated)
+        # The search entry swallows Escape, so close the dialog from here
+        search.connect("stop-search", lambda *_: dialog.close())
         search.connect("activate", lambda *_: (row := self._first_visible(listbox)) and on_activated(listbox, row))
         dialog.present(self)
         search.grab_focus()
